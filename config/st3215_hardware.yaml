@@ -1,0 +1,34 @@
+hardware_interface:
+  - name: st3215_hardware
+    type: st3215_hardware/ST3215HardwareInterface
+    parameters:
+      port: "/dev/ttyUSB0"
+      baudrate: "1000000"
+      timeout_ms: "100"
+    joints:
+      - name: joint_1
+        parameters:
+          servo_id: "1"
+        command_interfaces:
+          - name: position
+          - name: velocity
+          - name: effort
+        state_interfaces:
+          - name: position
+          - name: velocity
+          - name: effort
+          - name: temperature
+          - name: voltage
+      - name: joint_2
+        parameters:
+          servo_id: "2"
+        command_interfaces:
+          - name: position
+          - name: velocity
+          - name: effort
+        state_interfaces:
+          - name: position
+          - name: velocity
+          - name: effort
+          - name: temperature
+          - name: voltage
